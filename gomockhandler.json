@@ -1,0 +1,85 @@
+{
+	"mocks": {
+		"internal/mocks/internal/domain/repository/comment_repository.go": {
+			"checksum": "MIA7nAS5sfjywojXJpQ3AQ==",
+			"source_checksum": "LYiHNQqvTj5OIXBtG99Xyw==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "internal/domain/repository/comment_repository.go",
+				"destination": "internal/mocks/internal/domain/repository/comment_repository.go"
+			}
+		},
+		"internal/mocks/internal/service/comment/comment_service.go": {
+			"checksum": "Q8Jv9vpCURLSdBuSB24BGg==",
+			"source_checksum": "ryxtRKTMAZVAHUTxeuad0A==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "internal/service/comment/comment_service.go",
+				"destination": "internal/mocks/internal/service/comment/comment_service.go"
+			}
+		},
+		"mocks/domain/repository/comment_repository.go": {
+			"checksum": "ym+8FpmDyCplOFL10ACIuA==",
+			"source_checksum": "doOZmHVfMm2OK76GzDnPMg==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "internal/domain/repository/comment_repository.go",
+				"destination": "mocks/domain/repository/comment_repository.go"
+			}
+		},
+		"mocks/domain/repository/post_repository.go": {
+			"checksum": "eKvmNEqRWy9wfR4JVqQX5g==",
+			"source_checksum": "lwGvqniPYjt59TAHw6r+Gw==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "internal/domain/repository/post_repository.go",
+				"destination": "mocks/domain/repository/post_repository.go"
+			}
+		},
+		"mocks/infrastructure/file/file_store.go": {
+			"checksum": "T4o0e+e8D2BYY4r44BixKw==",
+			"source_checksum": "vgrD1ti8vy+ys37ulv6szw==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "internal/infrastructure/file/file_store.go",
+				"destination": "mocks/infrastructure/file/file_store.go"
+			}
+		},
+		"mocks/infrastructure/filestore/filestore.go": {
+			"checksum": "0mbBh9VkSYmFwkBc4Hhntw==",
+			"source_checksum": "T5pr2knxPi/9b0eAqJYWOA==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "internal/infrastructure/filestore/filestore.go",
+				"destination": "mocks/infrastructure/filestore/filestore.go"
+			}
+		},
+		"mocks/internal/domain/repository/comment_repository.go": {
+			"checksum": "MIA7nAS5sfjywojXJpQ3AQ==",
+			"source_checksum": "LYiHNQqvTj5OIXBtG99Xyw==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "internal/domain/repository/comment_repository.go",
+				"destination": "mocks/internal/domain/repository/comment_repository.go"
+			}
+		},
+		"mocks/internal/service/comment/comment_service.go": {
+			"checksum": "Q8Jv9vpCURLSdBuSB24BGg==",
+			"source_checksum": "ryxtRKTMAZVAHUTxeuad0A==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "internal/service/comment/comment_service.go",
+				"destination": "mocks/internal/service/comment/comment_service.go"
+			}
+		},
+		"mocks/internal/service/post/post_service.go": {
+			"checksum": "rUiL3XWDo36bhzXN0nOAqg==",
+			"source_checksum": "LkKZnpyx4F3eWE/S+7RGpw==",
+			"mode": "SOURCE_MODE",
+			"source_mode_runner": {
+				"source": "internal/service/post/post_service.go",
+				"destination": "mocks/internal/service/post/post_service.go"
+			}
+		}
+	}
+}
