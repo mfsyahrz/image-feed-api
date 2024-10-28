@@ -20,6 +20,10 @@ This document outlines the design considerations and assumptions made in this pr
 
 - **Efficient Retrieval**: Cursor-based pagination and caching strategies are anticipated for high-volume comment retrieval, ensuring fast access even under heavy load.
 
+- **Creator Field in Requests**:
+   - **Current Prototype**: The `creator` of a post or comment is specified directly in the request body. This simplifies the design and testing process but lacks security controls.
+   - **Future Production Setup**: With the addition of authentication, the `creator` field will be sourced from the authenticated user’s ID provided in the token in the `Authorization` header, ensuring data integrity and preventing impersonation.
+
 ---
 
 ## 3. Design
