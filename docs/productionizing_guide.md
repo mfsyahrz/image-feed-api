@@ -15,7 +15,7 @@ This section outlines the steps and best practices required to make this prototy
    - Use Docker to package the application. Create a `Dockerfile` that includes all dependencies and configurations for easy deployment and scaling.
 
 2. **Orchestration**:
-   - Use Kubernetes (or a managed service like AWS ECS, Google Cloud Run) to manage container deployments. This setup helps in handling load balancing, auto-scaling, and failover.
+   - Use Kubernetes to manage container deployments. This setup helps in handling load balancing, auto-scaling, and failover.
 
 3. **Database Setup**:
    - Use a managed database (e.g., AWS RDS, Google Cloud SQL) to ensure reliability, automatic backups, and scaling.
@@ -67,16 +67,24 @@ This section outlines the steps and best practices required to make this prototy
    - Implement caching for frequently accessed resources using a distributed cache like Redis or Memcached.
    - Use HTTP caching headers to manage client-side caching for appropriate endpoints.
 
-2. **Request Rate Limiting**:
+2. **Eventual Consistency for Comment Counter**:
+   - For high-write scalability, consider an eventual consistency model for the comment counter:
+     - **Background Processing**: Use background jobs to queue comment count updates and process them in batches.
+     - **Event Streaming (CDC)**: Alternatively, we can use a Change Data Capture (CDC) model to stream changes, allowing comment counts to update asynchronously based on database changes.
+     - **Cache-Based Counter**: Track real-time counts in a distributed cache (e.g., Redis) and periodically sync with the main database.
+     - **Estimation-Based Counter Display**: Display approximate numbers (e.g., "100k+ comments") instead of exact counts to support the eventual consistency model.
+
+
+3. **Request Rate Limiting**:
    - Use rate limiting on sensitive or resource-heavy endpoints to prevent API abuse.
 
-3. **Load Testing**:
+4. **Load Testing**:
    - Perform load testing using tools like JMeter or Artillery to identify bottlenecks and optimize performance under high traffic.
 
-4. **CDN for Static Files**:
+5. **CDN for Static Files**:
    - Use a Content Delivery Network (CDN) like Cloudflare or AWS CloudFront for serving static files, reducing latency for global users.
 
-5. **Optimize Database Queries**:
+6. **Optimize Database Queries**:
    - Review and optimize database queries by using indexes, reducing joins, and minimizing data retrieval.
 
 ## Additional Considerations
