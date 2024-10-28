@@ -25,5 +25,17 @@ This is a simple RESTful API for uploading images, adding captions, and commenti
 - PostgreSQL database setup (or use a Dockerized PostgreSQL).
 
 ### How To Run
-  - Please visit [How To Run](https://github.com/mfsyahrz/image_feed_api/blob/master/docs/how_to_run.md) which located in docs folder.
+  - Please visit [How To Run](https://github.com/mfsyahrz/image-feed-api/blob/master/docs/how_to_run.md) which located in docs folder.
 
+## API 
+
+This section outlines the available API endpoints for posts and comments
+
+| Method | Endpoint       | Description               |
+|--------|-----------------|---------------------------|
+| `POST` | `/posts`      | Create new Post with caption |
+| `GET` | `/posts`      | Get Posts with Pagination |
+| `POST` | `/posts/[postID]/comments`      | Commenting on a post |
+| `DELETE` | `/posts/[postID]/comments/[commentID]`      | Delete a comment |
+
+- For more detail, please refer to [postman collection](https://github.com/mfsyahrz/image-feed-api/blob/master/docs/how_to_run.md) which located in docs folder.
