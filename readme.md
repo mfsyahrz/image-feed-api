@@ -40,5 +40,7 @@ This section outlines the available API endpoints for posts and comments
 
 - For more detail, please refer to [postman collection](https://github.com/mfsyahrz/image-feed-api/blob/master/docs/how_to_run.md) which located in docs folder.
 
+## Prototype Design 
+c
 ## Productionizing Guide 
-- For more detail, please refer to [productionizing guide](https://github.com/mfsyahrz/image-feed-api/blob/main/docs/productionizing_guide.md) which located in docs folder.
+- For more detail for production guide, please refer to [productionizing guide](https://github.com/mfsyahrz/image-feed-api/blob/main/docs/productionizing_guide.md) which located in docs folder.

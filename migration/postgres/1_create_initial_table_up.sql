@@ -20,4 +20,4 @@ CREATE TABLE IF NOT EXISTS "posts"
   "created_date" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE INDEX idx_posts_pagination ON posts (comment_count, created_date, id);
+CREATE INDEX IF NOT EXISTS idx_posts_pagination ON posts (comment_count, id, created_date);
