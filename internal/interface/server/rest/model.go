@@ -44,9 +44,9 @@ func NewCommentsResponse(data entity.Comments, msg string) *CommentResponse {
 }
 
 type GetPaginatedPostsRequest struct {
-	Cursor *string 	  `json:"cursor"`
-	Limit  int     	  `json:"limit"`
-	CommentLimit int  `json:"comment_limit"`
+	Cursor       *string `json:"cursor"`
+	Limit        int     `json:"limit"`
+	CommentLimit int     `json:"comment_limit"`
 }
 
 type DeleteCommentRequest struct {

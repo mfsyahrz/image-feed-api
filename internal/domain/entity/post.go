@@ -45,7 +45,7 @@ type Post struct {
 	DisplayImg    string    `json:"-" db:"display_image"`
 	DisplayImgURL string    `json:"displayImgURL" db:"-"`
 	Comments      Comments  `json:"comments,omitempty"  db:"-"`
-	CommentCount  int64       `json:"commentCount" db:"comment_count"`
+	CommentCount  int64     `json:"commentCount" db:"comment_count"`
 	CreatedAt     time.Time `json:"createdAt"  db:"created_date"`
 }
 

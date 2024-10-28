@@ -16,7 +16,7 @@ const (
 
 	maxFileSize       = int64(100 * 1024 * 1024) // 100 mb
 	defaultWidthRatio = 600
-	defaultHeightRatio
+	defaultHeightRatio = 600
 
 	maxPosts           = 10
 	maxCommentsPerPost = 2

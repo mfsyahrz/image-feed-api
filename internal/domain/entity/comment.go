@@ -7,7 +7,7 @@ import (
 
 const (
 	MaxComments = 2
-	MaxPosts = 10
+	MaxPosts    = 10
 )
 
 type Comments []*Comment

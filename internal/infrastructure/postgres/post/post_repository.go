@@ -77,13 +77,11 @@ func (r *postRepo) fetch(ctx context.Context, input repository.GetPostInput) (en
 
 	req := getInput{&input}
 	conds, args := req.queryArgs()
-	limit  :=  util.DefaultIfZero(input.Limit, entity.MaxPosts)
+	limit := util.DefaultIfZero(input.Limit, entity.MaxPosts)
 	commentLimit := util.DefaultIfZero(input.CommentLimit, entity.MaxComments)
 	query := fmt.Sprintf(findPostsQuery, "WHERE "+strings.Join(conds, " AND "), limit, commentLimit)
 
-	var results []postDTO
-
-	fmt.Println(query, util.PrettyPrint(args))
+	var results []*postDTO
 
 	err := r.db.Select(&results, query, args...)
 	if err != nil {
@@ -94,10 +92,10 @@ func (r *postRepo) fetch(ctx context.Context, input repository.GetPostInput) (en
 	return r.decodePost(results)
 }
 
-func (r *postRepo) decodePost(data []postDTO) (entity.Posts, error) {
+func (r *postRepo) decodePost(rows []*postDTO) (entity.Posts, error) {
 	postMap := make(map[int64]*entity.Post)
 	var posts entity.Posts
-	for _, row := range data {
+	for _, row := range rows {
 		postID := row.ID.Int64
 
 		if _, exists := postMap[postID]; !exists {

@@ -99,7 +99,7 @@ func TestCommentService_Delete(t *testing.T) {
 	}{
 		{
 			name: "Success",
-			comment:&entity.Comment{
+			comment: &entity.Comment{
 				ID:     1,
 				PostID: 1,
 			},
@@ -121,9 +121,9 @@ func TestCommentService_Delete(t *testing.T) {
 			setupMock: func() {
 				mockPostRepo.EXPECT().FetchOne(gomock.Any(), gomock.Any()).Return(&entity.Post{ID: 1}, nil)
 				mockRepo.EXPECT().Delete(gomock.Any(), &entity.Comment{
-				ID:     1,
-				PostID: 1,
-			}).Return(errors.New("db error"))
+					ID:     1,
+					PostID: 1,
+				}).Return(errors.New("db error"))
 			},
 			wantErr: true,
 		},

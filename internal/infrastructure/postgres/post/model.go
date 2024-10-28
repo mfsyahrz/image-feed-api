@@ -33,23 +33,23 @@ func (i *getInput) queryArgs() ([]string, []interface{}) {
 
 type postDTO struct {
 	commentDTO
-	ID            sql.NullInt64  `db:"id"`
-	Caption       sql.NullString `db:"caption"`
-	Creator       sql.NullString `db:"creator"`
-	SrcImg        sql.NullString `db:"src_image"`
-	DisplayImg    sql.NullString `db:"display_image"`
-	CommentCount  sql.NullInt64  `db:"comment_count"`
-	CreatedAt     sql.NullTime   `db:"created_date"`
+	ID           sql.NullInt64  `db:"id"`
+	Caption      sql.NullString `db:"caption"`
+	Creator      sql.NullString `db:"creator"`
+	SrcImg       sql.NullString `db:"src_image"`
+	DisplayImg   sql.NullString `db:"display_image"`
+	CommentCount sql.NullInt64  `db:"comment_count"`
+	CreatedAt    sql.NullTime   `db:"created_date"`
 }
 
 func (d *postDTO) toPost() *entity.Post {
 	return &entity.Post{
-		ID:        d.ID.Int64,
-		Caption:   d.Caption.String,
-		Creator:   d.Creator.String,
-		CreatedAt: d.CreatedAt.Time,
-		DisplayImg: d.DisplayImg.String,
-		SrcImg: d.SrcImg.String,
+		ID:           d.ID.Int64,
+		Caption:      d.Caption.String,
+		Creator:      d.Creator.String,
+		CreatedAt:    d.CreatedAt.Time,
+		DisplayImg:   d.DisplayImg.String,
+		SrcImg:       d.SrcImg.String,
 		CommentCount: d.CommentCount.Int64,
 	}
 }

@@ -91,8 +91,8 @@ func (h *PostHandler) Create(c echo.Context) error {
 	}
 
 	posts, _, err := h.service.GetPaginated(c.Request().Context(), repository.GetPostInput{
-			IDs: []int64{post.ID},
-		})
+		IDs: []int64{post.ID},
+	})
 	if err != nil {
 		return err
 	}
@@ -103,7 +103,7 @@ func (h *PostHandler) Create(c echo.Context) error {
 }
 
 func (h *PostHandler) saveImage(c echo.Context) (string, string, error) {
-	srcFile, err := c.FormFile("file")
+	srcFile, err := c.FormFile("image")
 	if err != nil {
 		return "", "", fmt.Errorf("image upload error: %+v", err)
 	}

@@ -11,7 +11,6 @@ type GetCommentInput struct {
 }
 
 type CommentRepository interface {
-	Fetch(ctx context.Context, input GetCommentInput) (entity.Comments, error)
 	Save(ctx context.Context, comment *entity.Comment) error
-	Delete(ctx context.Context, comment *entity.Comment) error 
+	Delete(ctx context.Context, comment *entity.Comment) error
 }

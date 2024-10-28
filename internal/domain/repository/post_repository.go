@@ -8,10 +8,10 @@ import (
 )
 
 type GetPostInput struct {
-	Cursor *pagination.PostCursor
-	Limit  int 		 
+	Cursor       *pagination.PostCursor
+	Limit        int
 	CommentLimit int
-	IDs    []int64
+	IDs          []int64
 }
 
 type PostRepository interface {

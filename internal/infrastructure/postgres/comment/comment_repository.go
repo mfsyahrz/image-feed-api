@@ -16,8 +16,8 @@ import (
 const (
 	insertCommentQuery = `insert into comments (post_id, content, creator) 
 		values ($1, $2, $3) RETURNING id`
-	deleteCommentQuery = `DELETE from comments WHERE id = $1`
-	fetchCommentsQuery = `SELECT * FROM comments where post_id in (%s)`
+	deleteCommentQuery      = `DELETE from comments WHERE id = $1`
+	fetchCommentsQuery      = `SELECT * FROM comments where post_id in (%s)`
 	incrCommentCounterQuery = `UPDATE posts SET comment_count = comment_count + 1 WHERE id = $1`
 	decrCommentCounterQuery = `UPDATE posts SET comment_count = comment_count - 1 WHERE id = $1`
 )
