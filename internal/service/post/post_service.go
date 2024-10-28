@@ -57,11 +57,11 @@ func (s *postService) GetPaginated(ctx context.Context, input repository.GetPost
 
 func (s *postService) loadURL(posts entity.Posts) {
 	url := s.fileStore.GetBaseURL()
-	for _,p := range posts {
+	for _, p := range posts {
 		p.SetDisplayImgURL(url)
 	}
 }
- 
+
 func (s *postService) Save(ctx context.Context, input *CreatePostInput) (*entity.Post, error) {
 	logger.FromCtx(ctx).Info("Saving posts...")
 
@@ -162,7 +162,7 @@ func (s *postService) resizeAndConvert(fh file.IFileHeader) ([]byte, error) {
 		return nil, fmt.Errorf("unable to decode image: %v", err)
 	}
 
-	resizedImage := resize.Resize(defaultImageRatio, 0, img, resize.Lanczos3)
+	resizedImage := resize.Resize(defaultWidthRatio, defaultHeightRatio, img, resize.Lanczos3)
 
 	buf := new(bytes.Buffer)
 	if err := jpeg.Encode(buf, resizedImage, nil); err != nil {

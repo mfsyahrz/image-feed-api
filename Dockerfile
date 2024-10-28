@@ -21,6 +21,6 @@ RUN mkdir migration
 COPY --from=builder /app/image_feed_api .
 COPY --from=builder /app/migration/ migration/       
 
-EXPOSE 3333 3333
+EXPOSE 8080 8080
 
 CMD ["./image_feed_api"]

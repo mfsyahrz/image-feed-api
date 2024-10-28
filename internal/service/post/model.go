@@ -15,7 +15,8 @@ const (
 	displayImgDir = "display_images"
 
 	maxFileSize       = int64(100 * 1024 * 1024) // 100 mb
-	defaultImageRatio = 600
+	defaultWidthRatio = 600
+	defaultHeightRatio
 
 	maxPosts           = 10
 	maxCommentsPerPost = 2
