@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "e439376a-3b3d-4fb3-b1e0-e93e28f978e4",
+		"name": "image feed api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "cursor",
+							"value": "3-17-1729997517",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "Content-Type",
+						"type": "default"
+					},
+					{
+						"key": "Idempotency-Key",
+						"value": "1hnfcqh398134f",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/syahreza.falah/Downloads/IMG_3015.jpg"
+						},
+						{
+							"key": "creator",
+							"value": "john",
+							"type": "default"
+						},
+						{
+							"key": "caption",
+							"value": "hello world",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "creator",
+							"value": "frr",
+							"type": "default"
+						},
+						{
+							"key": "content",
+							"value": "jabscuaidsf",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/posts/45/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"45",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete comment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/posts/45/comments/29",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"45",
+						"comments",
+						"29"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
